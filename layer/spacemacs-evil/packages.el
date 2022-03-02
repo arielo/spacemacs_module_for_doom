@@ -26,6 +26,7 @@
         evil-matchit
         evil-numbers
         evil-surround
+        evil-embrace
         ;; Temporarily disabled, pending the resolution of
         ;; https://github.com/7696122/evil-terminal-cursor-changer/issues/8
         ;; evil-terminal-cursor-changer
