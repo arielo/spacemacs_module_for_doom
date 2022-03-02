@@ -16,6 +16,7 @@
 ;; We define prefix commands only for the sake of which-key
 (setq spacemacs/key-binding-prefixes '(("SPC" "M-x")
                                        ;; ("TAB" "last buffer")
+                                       ("1..9"  "select window")
                                        ("!"   "shell cmd")
                                        ("*"   "search project w/input")
                                        ("/"   "search project")
@@ -42,11 +43,14 @@
                                        ("Ew"  "windows")
                                        ("f"   "files")
                                        ("fC"  "files/convert")
+                                       ("fj"  "dired-jump")
+                                       ("ff"  "find file")
                                        ("fe"  "emacs(spacemacs)")
                                        ("fv"  "variables")
                                        ("fy"  "yank path")
                                        ("F"   "frame")
                                        ("g"   "git/versions-control")
+                                       ("gs"  "magit-status")
                                        ("h"   "help")
                                        ("hd"  "help-describe")
                                        ("hP"  "profiler")
@@ -152,6 +156,18 @@
     'universal-argument-more))
 ;; shell command  -------------------------------------------------------------
 (spacemacs/set-leader-keys "!" 'shell-command)
+;; window
+(spacemacs/set-leader-keys
+  "1" 'winum-select-window-1
+  "2" 'winum-select-window-2
+  "3" 'winum-select-window-3
+  "4" 'winum-select-window-4
+  "5" 'winum-select-window-5
+  "6" 'winum-select-window-6
+  "7" 'winum-select-window-7
+  "8" 'winum-select-window-8
+  "9" 'winum-select-window-9
+  )
 ;; kmacros --------------------------------------------------------------------
 (spacemacs/set-leader-keys
   "K("  'kmacro-start-macro-or-insert-counter
@@ -329,7 +345,9 @@
   "fe C-e" 'spacemacs/force-init-spacemacs-env
   "feR" 'dotspacemacs/sync-configuration-layers
   "fev" 'spacemacs/display-and-copy-version
-  "feU"  'configuration-layer/update-packages
+  "feU" 'configuration-layer/update-packages
+  "fj"  'dired-jump
+  "ff"  'find-file-at-point
   "fCd" 'spacemacs/unix2dos
   "fCu" 'spacemacs/dos2unix
   "fi" 'spacemacs/insert-file
@@ -359,6 +377,9 @@
   "Fo" 'other-frame
   "FO" 'spacemacs/dired-other-frame
   "Fn" 'make-frame)
+;; git ------------------------------------------------------------------------
+(spacemacs/set-leader-keys
+  "gs" 'magit-status)
 ;; help -----------------------------------------------------------------------
 (defalias 'emacs-tutorial 'help-with-tutorial)
 (spacemacs/set-leader-keys

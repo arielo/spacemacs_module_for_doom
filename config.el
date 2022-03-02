@@ -90,7 +90,8 @@ defer call using `spacemacs-post-user-config-hook'."
       "hT" nil
       "tt" nil
       "wc" nil
-      "x" nil)
+      "x" nil
+      "a" nil)
 
 ;; unbind the keys when necessary
 (general-auto-unbind-keys)
